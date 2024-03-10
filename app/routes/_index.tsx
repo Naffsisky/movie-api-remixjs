@@ -29,7 +29,7 @@ export const loader: LoaderFunction = async () => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZTJlZTNkMTdkZTQyZWI3MGM2MTliMWJlM2ZjY2MxMSIsInN1YiI6IjY1NWNmNmRkMDgxNmM3MDBmZDMzZDE0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.f-2tnxyC1kmnYxEVX4wKmx1Nm4arkj0Pjnr9uXW9pT4",
+        "Bearer " + process.env.MOVIE_DB_TOKEN,
     },
   });
 
