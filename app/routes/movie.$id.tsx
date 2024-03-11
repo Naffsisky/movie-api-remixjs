@@ -1,5 +1,5 @@
 import { LoaderFunction, json } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData, Link, Outlet } from "@remix-run/react";
 
 interface Movie {
   adult: boolean;
@@ -49,7 +49,7 @@ export default function MovieId() {
 
   return (
     <div className="min-h-screen p-10">
-      <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt={data.title} className="h-[40vh] object-cover w-full rounded-lg" />
+      <img src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`} alt={data.title} className="h-full object-cover w-full rounded-lg" />
       <h1 className="text-4xl font-bold text-center pt-5">{data.title}</h1>
       <div className="flex mt-10">
         <div className="w-1/2 pr-10">
@@ -75,6 +75,9 @@ export default function MovieId() {
         <div className="w-1/2">
           <h1 className="underline">Overview:</h1>
           <p className="text-justify">{data.overview}</p>
+          <p className="pt-10">
+            <Outlet />
+          </p>
         </div>
       </div>
     </div>
