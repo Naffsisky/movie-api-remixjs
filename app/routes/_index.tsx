@@ -1,5 +1,4 @@
-import type { MetaFunction, LoaderFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { MetaFunction, LoaderFunction, json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
@@ -51,7 +50,7 @@ export default function Index() {
         <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
           {data.results.map((movie: Movie) => (
             <div className="flex flex-col overflow-hidden rounded-lg border-2 border-indigo-500 bg-white" key={movie.id}>
-              <Link prefetch="intent" className="group relative block overflow-hidden bg-gray-100 md:h-96" to={`/movie/${movie.id}/comments`} style={{ height: "30rem" }}>
+              <Link prefetch="intent" className="group relative block overflow-hidden h-[30rem] bg-gray-100 md:h-96" to={`/movie/${movie.id}/comments`} >
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="absolute inset-0 h-full w-full object-cover transition duration-200 group-hover:scale-110" />
               </Link>
               <div className="flex flex-1 flex-col -4 sm:p-6">
